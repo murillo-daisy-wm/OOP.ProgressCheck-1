@@ -35,7 +35,14 @@ class fruitSalad{
 }
 
 
+/* EXTENDOR */
 
+class potatoes extends fruitSalad{
+    private function frenchFries(){
+    echo "We're making French Fries!";
+}
+}
+/* NEW */
  new fruitSalad('apple','pear','marshmallow');
 
 ?>
