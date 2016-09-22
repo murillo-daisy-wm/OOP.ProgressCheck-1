@@ -1,14 +1,11 @@
 
-
-
-
 <?php
-include 'fileTwo.php';
-include 'fileOne.php';
+//include ('fileTwo.php');
+//include ('fileOne.php');
 //AUTO LOAD //
 
 spl_autoload_register(function($class_name){
-    include "index.php";
+    include ("index.php");
 });
 
 
@@ -43,6 +40,7 @@ spl_autoload_register(function($class_name){
     {
         return $this->kind . ' are ' . $this->color;
     }
+
  abstract public function haveSeeds();
 }
 
@@ -56,9 +54,10 @@ class Apple extends Fruits{
     }
    public function haveSeeds()
     {
-       return 'they do have seeds!';
+       echo 'they do have seeds!';
     }
 }
+
 class Pear extends Fruits{
     public function describingFruits()
     {
@@ -66,7 +65,7 @@ class Pear extends Fruits{
     }
     public function haveSeeds()
     {
-        return 'they do have seeds!';
+        echo 'they do have seeds!';
     }
 }
 class Bananas extends Fruits{
@@ -76,7 +75,7 @@ class Bananas extends Fruits{
     }
     public function haveSeeds()
     {
-        return 'they do not have seeds!';
+        echo 'they do not have seeds!';
     }
 }
 
@@ -98,7 +97,7 @@ echo $Fruits->haveSeeds();
 
 
 
-<!--<!-- INCLUDE FUNCTION-->-->
+<!--<!-- INCLUDE FUNCTION-->
 <?php
 //include 'second.php';
 //?>
