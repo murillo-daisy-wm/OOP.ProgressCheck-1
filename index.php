@@ -1,5 +1,15 @@
+<!DOCTYPE html>
+    <html>
+
+
+<head>
+
+
+</head>
+
 
 <?php
+include ('styleSheet.css');
 //include ('fileTwo.php');
 //include ('fileOne.php');
 //AUTO LOAD //
@@ -23,7 +33,7 @@ class Name
 }
 ?>
 
-
+<body>
 <?php
 
 spl_autoload_register(function($class_name){
@@ -38,23 +48,22 @@ spl_autoload_register(function($class_name){
 
     public function describingFruits()
     {
-        return $this->kind . ' are ' . $this->color;
+        return $this->kind . '<h3> are </h3>' . $this->color;
     }
 
  abstract public function haveSeeds();
 }
 
 
-
-
 class Apple extends Fruits{
     public function describingFruits()
     {
         return parent::describingFruits();
+
     }
    public function haveSeeds()
     {
-       echo 'they do have seeds!';
+        echo '<h3> Apples do have seeds! </h3>' . '<br/>';
     }
 }
 
@@ -65,7 +74,7 @@ class Pear extends Fruits{
     }
     public function haveSeeds()
     {
-        echo 'they do have seeds!';
+        echo ' <h3> Pears do have seeds! </h3>' . '<br/>';
     }
 }
 class Bananas extends Fruits{
@@ -75,21 +84,51 @@ class Bananas extends Fruits{
     }
     public function haveSeeds()
     {
-        echo 'they do not have seeds!';
+        echo ' <h3> Bananas do not have seeds! </h3>'. "<br/>";
     }
 }
-
-$Fruits = new Apple();
-$Fruits->kind = 'Green Apples';
-$Fruits->color = 'green & ';
+?>
 
 
-echo $Fruits->describingFruits();
-echo $Fruits->haveSeeds();
+<br/><br/>
+
+<center>
+
+<?php
+
+$Fruits = new Apple;
+$Fruits->kind = '<h3>Green Apples</h3>';
+$Fruits->color = '<h3> green ! </h3>';
+
+$Pear = new Pear();
+$Pear ->kind = '<h3> Asian Pears </h3>';
+$Pear ->color = '<h3> brown ! </h3>';
+
+$Bananas = new Bananas();
+$Bananas->kind =' <h3> Saba Bananas </h3>';
+$Bananas->color = '<h3> yellow ! </h3>';
+
+echo $Fruits -> describingFruits();
+echo $Fruits -> haveSeeds();
+
+echo $Pear -> describingFruits();
+echo $Pear->haveSeeds();
+
+echo $Bananas -> describingFruits();
+echo $Bananas ->haveSeeds();
+
+//haven't echoed the seeds part
+
+//FROM OTHER PAGES
+//echo $Two = new Two();
+//echo $One = new One();
 
 
 ?>
+</body>
+    </center>
 
+</html>
 
 
 <!-- PREVIOUS CODE -->

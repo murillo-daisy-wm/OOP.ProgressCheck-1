@@ -5,10 +5,10 @@
 //include ('index.php');
 
 class One extends Two {
-    final public function functionOne()
-    {
-        return 'This is function One';
-    }
+     public function functionOne()
+     {
+         return 'This is function One';
+     }
 }
 
 //this function is just for the purpose of this project-
